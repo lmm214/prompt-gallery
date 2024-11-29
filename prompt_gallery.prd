@@ -1,0 +1,125 @@
+#### 产品定位
+一个用于分享和管理AI提示词的平台,帮助用户更好地使用AI工具。
+
+#### 功能需求
+
+1. 提示词管理
+- 提示词列表展示
+- 提示词详情查看  
+- 提示词创建/编辑
+- 提示词分类管理
+- 提示词标签管理
+- 提示词搜索功能
+
+2. 用户交互
+- 点赞功能
+- 浏览量统计
+- 分享功能
+- 复制提示词内容
+
+3. 页面布局
+- 响应式设计
+- 导航栏
+- 侧边栏分类导航
+- 提示词卡片展示
+- 详情页布局
+
+4. 数据存储
+- 提示词数据
+  - 标题
+  - 描述
+  - 内容
+  - 分类
+  - 标签
+  - 作者
+  - 创建/更新时间
+  - 点赞数
+  - 浏览量
+- 分类数据
+  - 名称
+  - 图标
+
+5. 技术栈
+- Vue 3
+- TypeScript
+- Tailwind CSS
+- Vue Router
+- Pinia
+- Vite
+
+#### UI设计规范
+
+1. 配色方案
+- 主色: #3B82F6 (蓝色)
+- 辅助色: #10B981 (绿色)
+- 背景色: #F3F4F6
+- 文字色: #1F2937
+
+2. 字体
+- 标题: Inter
+- 正文: -apple-system
+
+3. 间距
+- 基础间距: 16px
+- 组件间距: 24px
+- 区块间距: 32px
+
+4. 圆角
+- 小圆角: 4px
+- 中圆角: 8px
+- 大圆角: 12px
+
+#### 开发规范
+
+1. 代码规范
+- 使用ESLint + Prettier
+- 遵循Vue 3组合式API风格指南
+- TypeScript类型定义规范
+
+2. 组件开发
+- 组件命名采用PascalCase
+- Props类型声明
+- 事件命名采用kebab-case
+- 组件文档注释
+
+3. 状态管理
+- 使用Pinia进行状态管理
+- 模块化store设计
+- Action异步操作处理
+
+4. 路由管理
+- 路由懒加载
+- 路由守卫权限控制
+- 404页面处理
+
+
+#### 数据结构, 参考生成多条
+```typescript
+export const PromptData = {
+{
+    id: '1',
+    title: '沙漠绿洲',
+    description: '神秘的沙漠绿洲',
+    content: '金色的沙丘环绕着一片翠绿的绿洲，棕榈树在微风中轻轻摇曳。清澈的湖水倒映着蓝天白云，骆驼商队在远处行进。夕阳将沙漠染成橘红色，营地里升起袅袅炊烟。',
+    category: ['自然', '沙漠', '宁静'],
+    tags: ['绿洲', '日落', '探险'],
+    author: 'desertking',
+    createTime: new Date('2024-02-20'),
+    updateTime: new Date('2024-02-20'),
+    likes: 156,
+    views: 1890
+  },
+}
+
+### 安装文档
+# 安装依赖
+pnpm install
+
+# 安装其他必要依赖
+pnpm add vue-router@4 pinia @vueuse/core tailwindcss postcss autoprefixer @heroicons/vue
+
+# 初始化 tailwindcss
+pnpm dlx tailwindcss init -p
+
+pnpm add prismjs @types/prismjs
+pnpm add clipboard
