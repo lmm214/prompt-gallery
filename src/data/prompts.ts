@@ -2,9 +2,7 @@
 const defaultPreview = 'https://picsum.photos/600/400'
 
 export const tags = [
-    '数据分析', '产品设计', '编程开发', 
-    '营销策划', '教育培训', '创意写作',
-    '品牌设计', 'UI设计', '插画创作'
+    '英语', '单词', '标题', '文案','摄影'
   ] 
 
 export const prompts = [

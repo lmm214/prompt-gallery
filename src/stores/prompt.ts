@@ -27,16 +27,21 @@ export const usePromptStore = defineStore('prompt', () => {
     if (searchQuery.value) {
       const query = searchQuery.value.toLowerCase()
       filtered = filtered.filter(prompt => 
+        prompt.title.toLowerCase().includes(query) ||
         prompt.prompt.toLowerCase().includes(query) ||
-        prompt.author.toLowerCase().includes(query)
+        prompt.author.toLowerCase().includes(query) ||
+        tags.value.some(tag => 
+          tag.toLowerCase().includes(query) && 
+          prompt.prompt.toLowerCase().includes(tag.toLowerCase())
+        )
       )
     }
 
     if (selectedTags.value.length > 0) {
       filtered = filtered.filter(prompt => {
-        const promptKeywords = prompt.prompt.toLowerCase()
+        const promptText = (prompt.title + ' ' + prompt.prompt).toLowerCase()
         return selectedTags.value.some(tag => 
-          promptKeywords.includes(tag.toLowerCase())
+          promptText.includes(tag.toLowerCase())
         )
       })
     }
