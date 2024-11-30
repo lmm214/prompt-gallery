@@ -13,7 +13,7 @@
         </div>
         <div class="flex items-center space-x-4">
           <a 
-            href="./data/prompts.ts" 
+            href="https://github.com/inshub/prompt-gallery/blob/main/src/data/prompts.ts" 
             target="_blank"
             class="px-3 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-300 transition-colors duration-100 text-sm"
           >
