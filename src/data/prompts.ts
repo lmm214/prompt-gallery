@@ -183,6 +183,41 @@ export const prompts = [
     category: 'Claude',
     preview: defaultPreview
   },
+  {
+    id: '1004',
+    title: '发光文字封面',
+    prompt: `
+;; 提示词：发光文字封面图
+;; 作者：空格zephyr
+
+仿照下面svg，根据用户输入的主题，生成主题相关的SVG代码图根据主题替换以下元素
+1、搜索主题相关的词语和emoj替换svg中的元素
+2、根据主题选择相关的主背景色
+3、用主题作为标题
+4、根据主题替换装饰性图案
+5、开始时候询问用户，请输入你的主题
+svg代码
+'''
+<svg viewBox="0 0 800 300" xmlns="<http://www.w3.org/2000/svg>"> <defs> <!-- 主背景渐变 - 梦幻紫粉色调 --> <linearGradient id="dreamGradient" x1="0%" y1="0%" x2="100%" y2="100%"> <stop offset="0%" style="stop-color:#2D1B4E;stop-opacity:1" /> <stop offset="50%" style="stop-color:#432C70;stop-opacity:1" /> <stop offset="100%" style="stop-color:#583D8C;stop-opacity:1" /> </linearGradient> <!-- 圆形光晕 --> <radialGradient id="glowGradient" cx="50%" cy="50%" r="50%"> <stop offset="0%" style="stop-color:#E178ED;stop-opacity:0.2" /> <stop offset="100%" style="stop-color:#E178ED;stop-opacity:0" /> </radialGradient> <!-- 装饰性星星图案 --> <pattern id="starPattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse"> <path d="M25,20 L26,24 L30,25 L26,26 L25,30 L24,26 L20,25 L24,24 Z" fill="none" stroke="#E178ED" stroke-width="0.5" opacity="0.1"/> </pattern> <!-- 文字发光效果 --> <filter id="glow"> <feGaussianBlur stdDeviation="2" result="coloredBlur"/> <feMerge> <feMergeNode in="coloredBlur"/> <feMergeNode in="SourceGraphic"/> </feMerge> </filter> <pattern id="lines" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"> <path d="M0,0 Q50,50 100,100" stroke="#E178ED" stroke-width="0.5" opacity="0.1" fill="none"/> </pattern> </defs> <!-- 背景层 --> <rect width="800" height="300" fill="url(#dreamGradient)"/> <rect width="800" height="300" fill="url(#starPattern)"/> <rect width="800" height="300" fill="url(#lines)"/> <!-- 中心光晕 --> <circle cx="400" cy="150" r="150" fill="url(#glowGradient)"/> <!-- 装饰性曲线 --> <g stroke="#E178ED" stroke-width="0.5" opacity="0.15"> <path d="M0,50 Q400,20 800,50" /> <path d="M0,100 Q400,70 800,100" /> <path d="M0,200 Q400,170 800,200" /> <path d="M0,250 Q400,220 800,250" /> </g> <!-- 图标网络层和关联词语 --> <g opacity="0.4"> <!-- 连接线 - 使用更柔和的曲线 --> <g stroke="#E178ED" stroke-width="1" opacity="0.3"> <path d="M100,150 Q250,100 400,150" /> <path d="M400,150 Q550,100 700,150" /> <path d="M100,250 Q250,200 400,250" /> <path d="M400,250 Q550,200 700,250" /> <path d="M200,100 Q300,50 400,100" /> <path d="M300,200 Q400,150 500,200" /> </g> <!-- 图标节点和关联词语 --> <g> <!-- 第一行 --> <circle cx="100" cy="100" r="20" fill="#E178ED" opacity="0.6"/> <text x="100" y="100" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="100" y="70" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">创意灵感</text> <circle cx="300" cy="80" r="20" fill="#E178ED" opacity="0.6"/> <text x="300" y="80" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="300" y="50" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">艺术创作</text> <circle cx="500" cy="100" r="20" fill="#E178ED" opacity="0.6"/> <text x="500" y="100" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="500" y="70" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">梦想编织</text> <circle cx="700" cy="80" r="20" fill="#E178ED" opacity="0.6"/> <text x="700" y="80" text-anchor="middle" dominant-baseline="middle" font-size="15">🎭</text> <text x="700" y="50" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">故事演绎</text> <!-- 第二行 --> <circle cx="200" cy="160" r="20" fill="#E178ED" opacity="0.6"/> <text x="200" y="160" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="200" y="130" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">视觉呈现</text> <circle cx="400" cy="150" r="25" fill="#E178ED" opacity="0.7"/> <text x="400" y="150" text-anchor="middle" dominant-baseline="middle" font-size="20">💫</text> <text x="400" y="120" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">创意探索</text> <circle cx="600" cy="160" r="20" fill="#E178ED" opacity="0.6"/> <text x="600" y="160" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="600" y="130" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">感性共鸣</text> <!-- 第三行 --> <circle cx="150" cy="240" r="20" fill="#E178ED" opacity="0.6"/> <text x="150" y="240" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="150" y="210" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">色彩魔法</text> <circle cx="350" cy="220" r="20" fill="#E178ED" opacity="0.6"/> <text x="350" y="220" text-anchor="middle" dominant-baseline="middle" font-size="15">🎪</text> <text x="350" y="190" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">奇思妙想</text> <circle cx="550" cy="240" r="20" fill="#E178ED" opacity="0.6"/> <text x="550" y="240" text-anchor="middle" dominant-baseline="middle" font-size="15"></text> <text x="550" y="210" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">创意实现</text> <circle cx="650" cy="220" r="20" fill="#E178ED" opacity="0.6"/> <text x="650" y="220" text-anchor="middle" dominant-baseline="middle" font-size="15">🎪</text> <text x="650" y="190" text-anchor="middle" fill="#E178ED" font-size="12" filter="url(#glow)">梦境探索</text> </g> </g> <!-- 半透明分隔层 --> <rect width="800" height="300" fill="rgba(45,27,78,0.2)"/> <!-- 装饰性动态元素 - 闪烁的星星 --> <g> <circle cx="50" cy="50" r="2" fill="#E178ED"> <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite"/> </circle> <circle cx="750" cy="250" r="2" fill="#E178ED"> <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" begin="1.5s"/> </circle> <circle cx="400" cy="50" r="2" fill="#E178ED"> <animate attributeName="opacity" values="0.2;0.8;0.2" dur="3s" repeatCount="indefinite" begin="1s"/> </circle> </g> <!-- 角落装饰 --> <g stroke="#E178ED" stroke-width="1" opacity="0.6"> <path d="M20,20 Q35,20 50,50" fill="none"/> <path d="M780,20 Q765,20 750,50" fill="none"/> <path d="M20,280 Q35,280 50,250" fill="none"/> <path d="M780,280 Q765,280 750,250" fill="none"/> </g> <!-- 主标题文字层 --> <g filter="url(#glow)"> <text x="400" y="130" text-anchor="middle" fill="#E178ED" font-size="46" font-family="Arial, sans-serif" font-weight="bold" letter-spacing="2"> 织梦师 </text> <text x="400" y="170" text-anchor="middle" fill="#F399FF" font-size="24" font-family="Arial, sans-serif" letter-spacing="4" opacity="0.8"> DREAM WEAVER </text> </g> </svg>
+'''
+;; 1. 用户输入主题词
+;; 2. 系统分析主题类别
+;; 3. 根据主题类别确定设计风格
+;; 4. 生成主题相关的15个关键词
+;; 5. 按照预设布局生成SVG
+;; 6. 确保设计符合以下要求：
+;; - 使用主题相关的配色方案
+;; - 保持统一的视觉风格
+;; - 确保关键词分布合理
+;; - 包含适当的装饰元素
+;; - 动态元素适度
+;; - 标题突出显示
+    `,
+    author: '空格zephy',
+    publish: '2024-02-16',
+    category: 'Claude',
+    preview: defaultPreview
+  },
   //Midjourney提示词
   {
     id: '2001',

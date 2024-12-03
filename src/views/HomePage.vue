@@ -34,6 +34,9 @@
       </div>
     </header>
 
+    <!-- 添加公告组件 -->
+    <Announcement />
+
     <main class="max-w-7xl mx-auto px-4 py-6">
       <!-- 分类标签页 -->
       <div class="mb-8 border-b">
@@ -327,6 +330,7 @@ import 'prismjs/components/prism-lisp'
 import 'prismjs/components/prism-markdown'
 import 'prismjs/components/prism-json'
 import ClipboardJS from 'clipboard'
+import Announcement from '../components/Announcement.vue'
 
 const store = usePromptStore()
 const searchInput = ref('')
