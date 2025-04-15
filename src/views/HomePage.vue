@@ -118,8 +118,8 @@
                   <span 
                     class="px-2.5 py-1 text-xs rounded-full font-medium"
                     :class="{
-                      'bg-purple-100 text-purple-700': prompt.category === 'Claude',
-                      'bg-green-100 text-green-700': prompt.category === 'ChatGPT',
+                      'bg-purple-100 text-purple-700': prompt.category === '评价',
+                      'bg-green-100 text-green-700': prompt.category === '图片',
                       'bg-blue-100 text-blue-700': prompt.category === 'Midjourney'
                     }"
                   >
@@ -140,8 +140,8 @@
               >
                 <pre><code 
                   :class="{
-                    'language-lisp': prompt.category === 'Claude',
-                    'language-markdown': prompt.category === 'ChatGPT',
+                    'language-lisp': prompt.category === '评价',
+                    'language-markdown': prompt.category === '图片',
                     'language-json': prompt.category === 'Midjourney'
                   }"
                 >{{ !expandedPrompts[prompt.id] ? prompt.prompt.slice(0, 150) + '...' : prompt.prompt }}</code></pre>
