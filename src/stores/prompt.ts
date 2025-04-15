@@ -11,7 +11,7 @@ export const usePromptStore = defineStore('prompt', () => {
   const pageSize = ref(6)
   const selectedTags = ref<string[]>([])
   const searchQuery = ref('')
-  const currentCategory = ref<PromptCategory>('Claude')
+  const currentCategory = ref<PromptCategory>('评价')
 
   const categories = computed(() => [
     { id: '评价', name: '评价', count: prompts.value.filter(p => p.category === '评价').length },
