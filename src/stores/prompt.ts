@@ -14,9 +14,8 @@ export const usePromptStore = defineStore('prompt', () => {
   const currentCategory = ref<PromptCategory>('Claude')
 
   const categories = computed(() => [
-    { id: 'Claude', name: 'Claude', count: prompts.value.filter(p => p.category === 'Claude').length },
-    { id: 'ChatGPT', name: 'ChatGPT', count: prompts.value.filter(p => p.category === 'ChatGPT').length },
-    { id: 'Midjourney', name: 'Midjourney', count: prompts.value.filter(p => p.category === 'Midjourney').length },
+    { id: '评价', name: '评价', count: prompts.value.filter(p => p.category === '评价').length },
+    { id: '图片', name: '图片', count: prompts.value.filter(p => p.category === '图片').length },
   ])
 
   const filteredAndSortedPrompts = computed(() => {
